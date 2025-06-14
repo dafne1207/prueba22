@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fondo negro */
+  color: #800020; /* Texto color vino */
+}
+
+header {
+  background-color: #800020; /* Fondo vino */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #1a1a1a; /* Gris oscuro/negro para contraste */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #800020; /* Enlaces color vino */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: white; /* Cambio al pasar el mouse */
+}
+
+main {
+  padding: 2rem;
+}

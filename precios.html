@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Precios</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #800020;
+    }
+
+    header {
+      background-color: #800020;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: #800020;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+    }
+
+    .frase {
+      text-align: center;
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .paquetes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .paquete {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+    }
+
+    .paquete img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .paquete h3 {
+      margin-top: 0.5rem;
+    }
+
+    .precio {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #800020;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Precios</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ofrecemos.html">Qué ofrecemos</a></li>
+        <li><a href="precios.html">Cuánto cuesta</a></li>
+        <li><a href="diseños.html">Diseños y bebidas</a></li>
+        <li><a href="ubicacion.html">Dónde estamos</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="frase">💈 "No solo es un corte, es una actitud." 💈</div>
+
+    <h2>Paquetes de corte</h2>
+    <div class="paquetes">
+      <div class="paquete">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b9642733" alt="Corte Normal">
+        <h3>Normal</h3>
+        <p>Corte clásico con estilo. Rápido, limpio y con buena vibra.</p>
+        <div class="precio">$100 MXN</div>
+      </div>
+
+      <div class="paquete">
+        <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143" alt="Corte VIP">
+        <h3>VIP</h3>
+        <p>Corte premium con bebida incluida. Relájate mientras te renovamos.</p>
+        <div class="precio">$200 MXN</div>
+      </div>
+
+      <div class="paquete">
+        <img src="https://images.unsplash.com/photo-1599935709542-9c9f1c4df5d0" alt="Corte Súper VIP">
+        <h3>Súper VIP</h3>
+        <p>Corte + diseño exclusivo + bebida + masaje. Lujo y actitud.</p>
+        <div class="precio">$300 MXN</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

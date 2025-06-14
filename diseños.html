@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Diseños y bebidas</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #800020;
+    }
+
+    header {
+      background-color: #800020;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: #800020;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .equipo, .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .persona, .diseño {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+    }
+
+    .persona img, .diseño img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .diseño p {
+      font-style: italic;
+      color: #ccc;
+    }
+
+    ul.bebidas {
+      list-style: disc;
+      padding-left: 2rem;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+      .persona img, .diseño img {
+        max-height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diseños y bebidas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ofrecemos.html">Qué ofrecemos</a></li>
+        <li><a href="precios.html">Cuánto cuesta</a></li>
+        <li><a href="diseños.html">Diseños y bebidas</a></li>
+        <li><a href="ubicacion.html">Dónde estamos</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Conoce a nuestro equipo</h2>
+    <div class="equipo">
+      <div class="persona">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" alt="Carlos">
+        <h3>Carlos</h3>
+        <p>El Fade Master</p>
+      </div>
+      <div class="persona">
+        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702" alt="Luis">
+        <h3>Luis</h3>
+        <p>El Diseñador</p>
+      </div>
+      <div class="persona">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1" alt="Andrea">
+        <h3>Andrea</h3>
+        <p>Diseños a color</p>
+      </div>
+      <div class="persona">
+        <img src="https://images.unsplash.com/photo-1536766768598-e09213fdcf22" alt="David">
+        <h3>David</h3>
+        <p>Estilo clásico & barba</p>
+      </div>
+    </div>
+
+    <h2>Diseños de cortes</h2>
+    <div class="galeria">
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1624224971230-8e42c93cb399" alt="Diseño tribal">
+        <h4>Diseño tribal</h4>
+        <p>"Tu cabeza es nuestro lienzo."</p>
+      </div>
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1600853954660-942213d64c3f" alt="Líneas limpias">
+        <h4>Líneas limpias</h4>
+        <p>"El arte está en los detalles."</p>
+      </div>
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1624461152913-37113a29cce3" alt="Logo personalizado">
+        <h4>Logo personalizado</h4>
+        <p>"Haz que tu corte hable por ti."</p>
+      </div>
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1" alt="Diseño a color">
+        <h4>Diseño a color</h4>
+        <p>"Exprésate con estilo y color."</p>
+      </div>
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1588776814546-f251d5dce633" alt="Barba + línea">
+        <h4>Barba + línea</h4>
+        <p>"Precisión en cada trazo."</p>
+      </div>
+      <div class="diseño">
+        <img src="https://images.unsplash.com/photo-1615635282454-140ceef6f03b" alt="Corte urbano">
+        <h4>Corte urbano</h4>
+        <p>"Calle, actitud y presencia."</p>
+      </div>
+    </div>
+
+    <h2>Bebidas que ofrecemos</h2>
+    <ul class="bebidas">
+      <h2>Bebidas exclusivas</h2>
+<div class="galeria">
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1582452978356-2a26d50cfe36" alt="Whisky">
+    <h4>Whisky Premium</h4>
+    <p>"Johnnie Walker, Buchanan's, Jack Daniel's – clase y carácter."</p>
+  </div>
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1588854337236-fd1d29e40b9b" alt="Tequila">
+    <h4>Tequila Añejo</h4>
+    <p>"El poder de México en un trago – Don Julio, 1800, Herradura."</p>
+  </div>
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1612531388842-0e8cc4d0ba6e" alt="Ron">
+    <h4>Ron Oscuro</h4>
+    <p>"Dulzura intensa con historia – Flor de Caña, Havana Club."</p>
+  </div>
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1627308595216-15cd5d1b177d" alt="Cóctel">
+    <h4>Cóctel de la casa</h4>
+    <p>"Una mezcla exclusiva para nuestros VIP."</p>
+  </div>
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1609743529343-ef57e6dc5864" alt="Mezcal">
+    <h4>Mezcal artesanal</h4>
+    <p>"Fuerte, ahumado, auténtico – sólo para conocedores."</p>
+  </div>
+  <div class="diseño">
+    <img src="https://images.unsplash.com/photo-1614707267536-7e244254b7de" alt="Cerveza">
+    <h4>Cerveza artesanal</h4>
+    <p>"Sabor local, servida bien fría."</p>
+  </div>
+</div>
+
+    </ul>
+  </main>
+</body>
+</html>

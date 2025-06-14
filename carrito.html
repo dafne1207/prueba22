@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrito de bebidas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #800020;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: white;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .productos, .carrito {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 350px;
+      min-height: 400px;
+      color: white;
+    }
+    .producto {
+      border-bottom: 1px solid #800020;
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .producto:last-child {
+      border: none;
+    }
+    button {
+      background-color: #800020;
+      border: none;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b2224b;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .carrito ul li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+    .carrito ul li span {
+      flex: 1;
+    }
+    .eliminar {
+      background-color: #cc0000;
+      font-weight: bold;
+      padding: 0 0.5rem;
+      border-radius: 4px;
+    }
+    .total {
+      font-weight: bold;
+      margin-top: 1rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Barbería - Carrito de Bebidas</h1>
+
+  <div class="container">
+
+    <!-- Lista de productos -->
+    <section class="productos">
+      <h2>Bebidas disponibles</h2>
+      <div class="producto">
+        <span>Vino tinto</span>
+        <span>$150</span>
+        <button data-nombre="Vino tinto" data-precio="150">Agregar</button>
+      </div>
+      <div class="producto">
+        <span>Bacardí</span>
+        <span>$180</span>
+        <button data-nombre="Bacardí" data-precio="180">Agregar</button>
+      </div>
+      <div class="producto">
+        <span>Whisky Johnnie Walker</span>
+        <span>$350</span>
+        <button data-nombre="Whisky Johnnie Walker" data-precio="350">Agregar</button>
+      </div>
+      <div class="producto">
+        <span>Tequila Don Julio</span>
+        <span>$400</span>
+        <button data-nombre="Tequila Don Julio" data-precio="400">Agregar</button>
+      </div>
+      <div class="producto">
+        <span>Cerveza artesanal</span>
+        <span>$90</span>
+        <button data-nombre="Cerveza artesanal" data-precio="90">Agregar</button>
+      </div>
+    </section>
+
+    <!-- Carrito -->
+    <section class="carrito">
+      <h2>Tu carrito</h2>
+      <ul id="lista-carrito">
+        <!-- Productos añadidos aparecerán aquí -->
+      </ul>
+      <div class="total" id="total">Total: $0</div>
+    </section>
+
+  </div>
+
+  <script>
+    const botonesAgregar = document.querySelectorAll('.producto button');
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total');
+
+    let carrito = [];
+
+    function actualizarCarrito() {
+      listaCarrito.innerHTML = '';
+
+      let total = 0;
+      carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${item.nombre} x${item.cantidad}</span>
+          <span>$${item.precio * item.cantidad}</span>
+          <button class="eliminar" data-index="${index}">&times;</button>
+        `;
+        listaCarrito.appendChild(li);
+        total += item.precio * item.cantidad;
+      });
+
+      totalCarrito.textContent = `Total: $${total}`;
+
+      // Añadir funcionalidad eliminar
+      document.querySelectorAll('.eliminar').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const index = e.target.getAttribute('data-index');
+          carrito.splice(index, 1);
+          actualizarCarrito();
+        });
+      });
+    }
+
+    botonesAgregar.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const nombre = boton.getAttribute('data-nombre');
+        const precio = parseFloat(boton.getAttribute('data-precio'));
+
+        const productoExistente = carrito.find(item => item.nombre === nombre);
+        if (productoExistente) {
+          productoExistente.cantidad++;
+        } else {
+          carrito.push({ nombre, precio, cantidad: 1 });
+        }
+
+        actualizarCarrito();
+      });
+    });
+  </script>
+
+</body>
+</html>
